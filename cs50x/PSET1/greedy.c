@@ -25,8 +25,8 @@ int main(void)
       {
          do
          {
-	     changeOwed = changeOwed - q25;
-	     quarters++;
+	  changeOwed = changeOwed - q25;
+	  quarters++;
          }
 	 while(changeOwed >= q25);
       }
@@ -35,9 +35,8 @@ int main(void)
       {
          do
          {
-             changeOwed = changeOwed - d10;
-             dimes++;
-
+          changeOwed = changeOwed - d10;
+          dimes++;
          }
 	 while(changeOwed >= d10);
       }
@@ -46,8 +45,8 @@ int main(void)
       {
          do
          {
-             changeOwed = changeOwed - n05;
-             nickels++;
+          changeOwed = changeOwed - n05;
+          nickels++;
          }
 	 while(changeOwed >= n05);
       }
@@ -56,8 +55,8 @@ int main(void)
       {
          do
          {
-			 changeOwed = changeOwed - p01;
-             pennies++;
+	   changeOwed = changeOwed - p01;
+           pennies++;
          }
 	 while(changeOwed >= p01);
       }
