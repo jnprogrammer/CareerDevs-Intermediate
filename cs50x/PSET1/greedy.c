@@ -25,37 +25,40 @@ int main(void)
       {
          do
          {
-             changeOwed = changeOwed - q25;
-             quarters++;
-         }while(changeOwed >= q25);
+	  changeOwed = changeOwed - q25;
+	  quarters++;
+         }
+	 while(changeOwed >= q25);
       }
 
       if(changeOwed > d10)
       {
          do
          {
-             changeOwed = changeOwed - d10;
-             dimes++;
-
-         }while(changeOwed >= d10);
+          changeOwed = changeOwed - d10;
+          dimes++;
+         }
+	 while(changeOwed >= d10);
       }
 
       if(changeOwed > n05)
       {
          do
          {
-             changeOwed = changeOwed - n05;
-             nickels++;
-         }while(changeOwed >= n05);
+          changeOwed = changeOwed - n05;
+          nickels++;
+         }
+	 while(changeOwed >= n05);
       }
 
       if(changeOwed > p01)
       {
          do
          {
-			 changeOwed = changeOwed - p01;
-             pennies++;
-         }while(changeOwed >= p01);
+	   changeOwed = changeOwed - p01;
+           pennies++;
+         }
+	 while(changeOwed >= p01);
       }
 
       printf("Amount left: %f",changeOwed);
