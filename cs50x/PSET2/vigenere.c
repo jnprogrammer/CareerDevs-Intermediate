@@ -15,7 +15,7 @@ bool userWantsContinue();
 
 int main(int argc, string argv[])
 {
-   do //the program is in a do while loop so that the userWantsContinue() function can allow the user to reuse the program quickly if they want to use the same key.
+   do //the program is in a do while loop so that the userWantsContinue() function can allow the user to reuse the program quickly if they want to use the same key
    {
        string phrase = " ";
        string keyPhrase = " ";
@@ -23,18 +23,18 @@ int main(int argc, string argv[])
        int len = 0;
 
        if(argc < 2)
-        {
+        {   //if User fails to enter a command line arguement
             printf("You need to enter a word for a key when running\n");
             return 1;
         }
        if(argc > 2)
-        {
+        {   //If user enters more than one argument
             printf("you entered in more than one argument\n");
             return 1;
         }
         len = strlen(argv[1]);
 
-        //checks if the
+        //checks if the key entered as a command line argument is a word.
         for(int i = 0; i < len; i++)
         {
             if(!isalpha(argv[1][i]))
@@ -47,20 +47,19 @@ int main(int argc, string argv[])
        phrase = get_string();
        keyPhrase = argv[1];
 
-
        strcpy(orginalPhrase, phrase);
-       //printf("%s", applyKey(keyPhrase, phrase));
+
 
        //applies the Vigenere cipher
+       vigenere(orginalPhrase,applyKey(keyPhrase,phrase));   //printf("%s", applyKey(keyPhrase, phrase)); used for testing applyKey function
 
-       vigenere(orginalPhrase,applyKey(keyPhrase,phrase));
     //checks if user wants to attempt to run the program again
    }while(userWantsContinue());
    return 0;
 }
-/*  This function was used when developing the Vigenere function,
-    once Vigenere correctly opperated it was no longer needed however it could be useful in the future.
 
+//this function applies the key modifcation from the keyword commandline argument
+//a or A is 0 to z or Z as 25, with 26 numbers to use to modify the phrase before the Vigenere functon is applied
 string applyKey(string key, string phrase)
 {
     int len = strlen(phrase),
@@ -84,8 +83,8 @@ string applyKey(string key, string phrase)
     }
     return phrase;
 }
-*/
 
+//this funtion applies the Vigenere cipher to a phrase that is already modified with a key.
 void vigenere(string phrase, string newPhrase)
 {
     int len = strlen(phrase), key = 0;
@@ -115,6 +114,7 @@ void vigenere(string phrase, string newPhrase)
    printf("\n");
 }
 
+//This function is made to perserve the case of an entered phrase.
 int alphaPos(char letter)
 {
     int holderChar = letter , alPos = 0;
