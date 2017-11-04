@@ -14,16 +14,24 @@ int main(int argc, string argv[])
         printf("You need to enter a number for a key when running\n");
         return 1;
     }
-    IF(argc )
+    int argLen = strlen(argv[1]);
+    for(int i = 0; i < argLen; i++)
+    {
+        if(isalpha(argv[1][i]))
+        {
+            printf("You entered an argument that isnt a number !\n");
+            return 1;
+        }
+    }
 
     int key = atoi(argv[1]);
-
+    printf("Enter a phrase you want ceasar cipher executed apon\n");
     string phrase = get_string();
-    int len = strlen(phrase);
+    int phraseLen = strlen(phrase);
 
-
-   for(int i = 0; i < len; i++)
-   {
+    printf("ciphertext: ");
+    for(int i = 0; i < phraseLen; i++)
+    {
 
     if(isalpha(phrase[i]))
     {
@@ -37,13 +45,13 @@ int main(int argc, string argv[])
        {
        printf("%c",(((phrase[i] - 65 + key) % 26) + 65));
        }
-    }
-    else
-    {
-        printf("%c",phrase[i]);
-    }
+     }
+     else
+     {
+       printf("%c",phrase[i]);
+     }
 
-   }
-   printf("\n");
-   return 0;
+    }
+    printf("\n");
+    return 0;
 }

@@ -9,14 +9,14 @@
 void vigenere(string,string);
 int alphaPos(char letter);
 string applyKey(string, string);
-bool userWantsContinue();
+//bool userWantsContinue();
 
 
 
 int main(int argc, string argv[])
 {
-   do //the program is in a do while loop so that the userWantsContinue() function can allow the user to reuse the program quickly if they want to use the same key
-   {
+   //do //the program is in a do while loop so that the userWantsContinue() function can allow the user to reuse the program quickly if they want to use the same key
+   //{  // make sure to uncomment the do while, userWantsContinue prototype and the function, this was commented out to pass the cs50 checkbot
        string phrase = " ";
        string keyPhrase = " ";
        char orginalPhrase[100];
@@ -54,7 +54,7 @@ int main(int argc, string argv[])
        vigenere(orginalPhrase,applyKey(keyPhrase,phrase));   //printf("%s", applyKey(keyPhrase, phrase)); used for testing applyKey function
 
     //checks if user wants to attempt to run the program again
-   }while(userWantsContinue());
+  // }while(userWantsContinue());
    return 0;
 }
 
@@ -88,7 +88,7 @@ string applyKey(string key, string phrase)
 void vigenere(string phrase, string newPhrase)
 {
     int len = strlen(phrase), key = 0;
-
+    printf("ciphertext: " );
     for(int i = 0; i < len; i++)
     {
         if(isalpha(phrase[i]))
@@ -108,6 +108,7 @@ void vigenere(string phrase, string newPhrase)
         }
         else
         {
+
             printf("%c",phrase[i]);
         }
     }
@@ -137,6 +138,7 @@ int alphaPos(char letter)
 }
 
 // a function to check if the user wants to use the program again.
+/*
 bool userWantsContinue(){
 
 	string userInput = " ";
@@ -156,4 +158,4 @@ bool userWantsContinue(){
 
 	return (strncmp(userInput,"n",1));
 
-}
+}*/
