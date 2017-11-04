@@ -3,31 +3,53 @@
 #include <string.h>
 #include <ctype.h>
 
+bool userWantsContinue();
+
 int main(void)
 {
-   
-    string name = get_string();
-    //string temp = "Josh";
-    //char * strPtn = NULL;
-    int n = strlen(name);
-    int hold = 0;
-    for(int i = 0; i < n; i++)
+    do
     {
-      //  int n = strlen(argv[i]);
-     if(name[i] == ' ')
-     {
-         hold = i+1;
-     }
-     if(i == hold)
-     {
-         printf("%c",toupper(name[i]));
-         hold = -1;
-     }
-     //temp =  strncat(temp,name,0);
-    } printf("\n");
-   //printf("%c%c\n",name[0],name[hold]);
-    //strncat(theName,initials,1);
-    //strncat(initials,theLast,1);
-   // printf("%s\n",theName);
-   // printf("%s\n",initials);
+        printf("Enter a first and last name separated with a space\n");
+
+        string name = get_string();
+        int nameLen = strlen(name);
+        int tempPosition = 0;
+
+        for(int i = 0; i < nameLen; i++)
+        {
+         if(name[i] == ' ')
+         {
+             tempPosition = i+1;
+         }
+         if(i == tempPosition)
+         {
+             printf("%c",toupper(name[i]));
+             tempPosition = -1;
+         }
+
+        } printf("\n");
+    }while(userWantsContinue());
+
+}
+
+// a function to check if the user wants to use the program again.
+bool userWantsContinue(){
+
+	string userInput = " ";
+	bool isValidInput = false;
+
+	do{
+		printf("Would you like to do this again? \n");
+		printf("Enter y for yes and enter n for no\n");
+		userInput = get_string();
+
+		isValidInput = (strncmp(userInput,"n",1)) || (strncmp(userInput,"y",1));
+		if (!isValidInput)
+		{
+			printf("Enter y or n \n");
+		}
+	} while (!isValidInput);
+
+	return (strncmp(userInput,"n",1));
+
 }
