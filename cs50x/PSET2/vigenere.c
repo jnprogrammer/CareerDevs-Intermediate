@@ -5,6 +5,7 @@
 #include <cs50.h>
 
 
+//function prototypes
 void vigenere(string,string);
 int alphaPos(char letter);
 string applyKey(string, string);
@@ -14,8 +15,7 @@ bool userWantsContinue();
 
 int main(int argc, string argv[])
 {
-
-   do
+   do //the program is in a do while loop so that the userWantsContinue() function can allow the user to reuse the program quickly if they want to use the same key.
    {
        string phrase = " ";
        string keyPhrase = " ";
@@ -33,6 +33,8 @@ int main(int argc, string argv[])
             return 1;
         }
         len = strlen(argv[1]);
+
+        //checks if the
         for(int i = 0; i < len; i++)
         {
             if(!isalpha(argv[1][i]))
@@ -48,11 +50,16 @@ int main(int argc, string argv[])
 
        strcpy(orginalPhrase, phrase);
        //printf("%s", applyKey(keyPhrase, phrase));
-       vigenere(orginalPhrase,applyKey(keyPhrase,phrase));
 
+       //applies the Vigenere cipher
+
+       vigenere(orginalPhrase,applyKey(keyPhrase,phrase));
+    //checks if user wants to attempt to run the program again
    }while(userWantsContinue());
    return 0;
 }
+/*  This function was used when developing the Vigenere function,
+    once Vigenere correctly opperated it was no longer needed however it could be useful in the future.
 
 string applyKey(string key, string phrase)
 {
@@ -61,6 +68,7 @@ string applyKey(string key, string phrase)
         keyLen = strlen(key),
         phraseLoc = 0;
 
+    //
     for(int i = 0; i < len; i++)
     {
          if(isalpha(phrase[i]))
@@ -76,6 +84,7 @@ string applyKey(string key, string phrase)
     }
     return phrase;
 }
+*/
 
 void vigenere(string phrase, string newPhrase)
 {
@@ -129,11 +138,12 @@ int alphaPos(char letter)
 
 // a function to check if the user wants to use the program again.
 bool userWantsContinue(){
+
 	string userInput = " ";
 	bool isValidInput = false;
 
 	do{
-		printf("Would you like to do another? \n");
+		printf("Would you like to do another with the same KeyPhrase? \n");
 		printf("Enter y for yes and enter n for no\n");
 		userInput = get_string();
 
