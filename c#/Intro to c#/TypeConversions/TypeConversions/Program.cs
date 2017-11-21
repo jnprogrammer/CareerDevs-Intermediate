@@ -21,9 +21,24 @@ namespace TypeConversions
             Console.WriteLine(u);
 
 
-            var num = "1234";
-            int l = Convert.ToInt32(num);
-            Console.WriteLine(l);
+            // Program attepts to run code with in try block
+            // If unable it will run code in catch block
+            try
+            {
+                string str = "true";
+                bool boolus = Convert.ToBoolean(str);
+                Console.WriteLine(boolus);
+
+                var num = "1234";
+                int l = Convert.ToByte(num);
+                Console.WriteLine(l);
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("The number couldn't be converted to a byte");
+            }
+           
 
         }
     }
