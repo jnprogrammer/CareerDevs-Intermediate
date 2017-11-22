@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C5F8100-EEAB-4A2D-A703-300D9221C1B6}</ProjectGuid>
+    <ProjectGuid>{37B9724A-547F-4C20-ABCC-0F80F1A28F15}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Conditionals</RootNamespace>
-    <AssemblyName>Conditionals</AssemblyName>
+    <RootNamespace>Exercies</RootNamespace>
+    <AssemblyName>Exercies</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="season.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
