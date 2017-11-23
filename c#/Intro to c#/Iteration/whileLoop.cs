@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,19 +29,19 @@ namespace Exercies
             //    i++;
             //}
 
-            while(true)
+            while (true)
             {
                 Console.Write("Type your name: ");
                 var input = Console.ReadLine();
 
-                if(!String.IsNullOrWhiteSpace(input))
+                if (!String.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("@Echo: " + input);
                     continue;
                 }
 
                 break;
-               
+
             }
 
         }
