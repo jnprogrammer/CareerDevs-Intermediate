@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +16,9 @@ namespace Exercies
 
             var buffer = new char[passwordLength];
 
-            for(var i = 0; i < passwordLength; i++)
+            for (var i = 0; i < passwordLength; i++)
             {
-                buffer[i] = (char)('a' + random.Next(0, 26));                
+                buffer[i] = (char)('a' + random.Next(0, 26));
             }
 
             var password = new string(buffer);
