@@ -10,19 +10,16 @@ namespace Exercies
     {
         static void Main(string[] args)
         {
-            var random = new Random();
-
-            const int passwordLength = 10;
-
-            var buffer = new char[passwordLength];
-
-            for(var i = 0; i < passwordLength; i++)
+            int counter = 0;
+            for (var i = 1; i <= 100; i++)
             {
-                buffer[i] = (char)('a' + random.Next(0, 26));                
+                if (i % 3 == 0)
+                {
+                    counter++;
+                    Console.WriteLine(i);
+                }
             }
-
-            var password = new string(buffer);
-            Console.WriteLine(buffer);
+            Console.WriteLine(string.Format("There are {0} numbers that are divisible by 3 with no remainder",counter));
 
         }
     }
