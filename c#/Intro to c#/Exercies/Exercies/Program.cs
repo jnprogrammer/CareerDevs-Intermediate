@@ -10,20 +10,21 @@ namespace Exercies
     {
         static void Main(string[] args)
         {
-            var userInput = "";
-            int numberTotals = 0,numbers = 0;
-            do
+            var userInput ="";
+            int convertedInput = 0, factorial = 1;
+            Console.WriteLine("Enter a number, must be a number");
+            userInput = Console.ReadLine();
+            int.TryParse(userInput, out convertedInput);
+           
+            for(int i = convertedInput; i >= 1; i--)
             {
-                Console.WriteLine("Enter a number or type \"ok\"");
-                userInput = Console.ReadLine();
+                factorial = factorial * i ;
+            }
 
-                if (int.TryParse(userInput,out numbers))
-                {
-                    numberTotals += numbers;
-                    Console.WriteLine(numberTotals);
-                }
+            Console.WriteLine(factorial);
 
-             } while (userInput != "ok");
+
+
         }
     }
 }
