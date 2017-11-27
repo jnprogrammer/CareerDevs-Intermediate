@@ -23,8 +23,6 @@ namespace Exercies
 
             Console.WriteLine(factorial);
 
-
-
         }
     }
 }
