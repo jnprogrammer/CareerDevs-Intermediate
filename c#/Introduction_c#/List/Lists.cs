@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace Exercies
         {
             var numbers = new List<int>() { 50, 28, 73, 44 };
             numbers.Add(18);
-            numbers.AddRange(new int[7] { 5, 6, 2, 7,32,34,32 });
+            numbers.AddRange(new int[7] { 5, 6, 2, 7, 32, 34, 32 });
 
             foreach (var number in numbers)
                 Console.WriteLine(number);
@@ -22,11 +22,11 @@ namespace Exercies
             Console.WriteLine("Last Index of 2: " + numbers.LastIndexOf(2));
             Console.WriteLine("Count: " + numbers.Count);
 
-           
 
-            for(var i = 0; i < numbers.Count;i++)
+
+            for (var i = 0; i < numbers.Count; i++)
             {
-                if(numbers[i] == 32)
+                if (numbers[i] == 32)
                 {
                     numbers.Remove(numbers[i]);
                 }
