@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +18,11 @@ namespace Exercies
             do
             {
                 name = Console.ReadLine();
-                if(name !="")
+                if (name != "")
                 {
-                  names.Add(name);
+                    names.Add(name);
                 }
-                
+
             } while (name != "");
 
             var numNames = names.Count();
@@ -39,7 +39,7 @@ namespace Exercies
                     Console.WriteLine(string.Format("{0} and {1} likes your post", names[0], names[1]));
                     break;
                 default:
-                    Console.WriteLine(string.Format("Not only does {0}, {1} and {2} like your post, but others do too!",names[0],names[1],names[2]));
+                    Console.WriteLine(string.Format("Not only does {0}, {1} and {2} like your post, but others do too!", names[0], names[1], names[2]));
                     break;
             }
         }
