@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,8 @@ namespace Exercies
         {
 
             // Creating timespan objects
-            var timeSpan = new TimeSpan(1,2,3);
-            var timeSpan2 = new TimeSpan(1,0,0);
+            var timeSpan = new TimeSpan(1, 2, 3);
+            var timeSpan2 = new TimeSpan(1, 0, 0);
 
             var timeSpan3 = TimeSpan.FromHours(1);
             var start = DateTime.Now;
