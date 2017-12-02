@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,23 +13,28 @@ using System.Threading.Tasks;
  * 
  * WORK IN PROGRESS
  */
+
 namespace Exercies
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string reverseName = "", input = "";
+            string input = "";
             Console.WriteLine("Enter your name please");
             input = Console.ReadLine();
+
+
             var nameAry = new char[input.Length];
 
-            for (var i = 0; i < input.Length; i++)
+            for (var i = input.Length; i > 0; i--)
             {
-                nameAry[input.Length - 1] = nameAry[i + 1];
+                nameAry[input.Length - i] = nameAry[i - 1];
             }
             var strAry = new string(nameAry);
-            Console.WriteLine(string.Format("{0}", nameAry));
+            Console.WriteLine("Reversed: " + strAry);
         }
+
+
     }
 }

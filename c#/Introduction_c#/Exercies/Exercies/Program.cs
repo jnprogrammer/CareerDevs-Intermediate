@@ -5,6 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * 
+ 6.2- Write a program and ask the user to enter their name. 
+ Use an array to reverse the name and then store the result in a new string. 
+ Display the reversed name on the console.
+ * 
+ * WORK IN PROGRESS
+ */
 
 namespace Exercies
 {
@@ -12,15 +20,48 @@ namespace Exercies
     {
         static void Main(string[] args)
         {
-            var path = @"C:\Users\jnprogrammer2\Documents\CareerDevs-Intermediate\c#\Introduction_c#\Files and Directories\file.cs";
+            string[] elements;
+            while (true)
+            {
+                Console.WriteLine("Enter a list of CSV up to five numbers:");
+                var input = Console.ReadLine();
 
-            var dotIndex = path.IndexOf('.');
-            var extension = path.Substring(dotIndex);
+                if (!String.IsNullOrWhiteSpace(input))
+                {
+                    elements = input.Split(',');
+                    if (elements.Length >= 5)
+                        break;
+                }
+                Console.WriteLine("Invalid List");
+            }
 
-            Console.WriteLine("Extension: " + Path.GetExtension(path));
-            Console.WriteLine("File Name: " + Path.GetFileName(path));
-            Console.WriteLine("File Name without extention: " + Path.GetFileNameWithoutExtension(path));
-            Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));
+            var numbers = new List<int>();
+            foreach (var number in elements)
+            {
+                numbers.Add(Convert.ToInt32(number));
+            }
+
+            var smallests = new List<int>();
+            while (smallests.Count < 3)
+            {
+                var min = numbers[0];
+                foreach (var number in numbers)
+                {
+                    if (number < min)
+                    {
+                        min = number;
+                    }
+                }
+                smallests.Add(min);
+                numbers.Remove(min);
+            }
+            Console.WriteLine("the 3 smallest numbers are: ");
+            foreach (var number in smallests)
+            {
+                Console.WriteLine(number);
+            }
         }
+
+       
     }
 }
