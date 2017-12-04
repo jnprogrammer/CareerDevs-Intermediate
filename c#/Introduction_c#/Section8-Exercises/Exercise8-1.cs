@@ -21,11 +21,13 @@ namespace Exercies
         {
             Console.WriteLine("Enter in a few numbers seporated by hyphen - ");
             var input = Console.ReadLine();
-            string numLine = "";
-            for (var i = input.Length; i > 0; i++)
-            {
+            var nums = new List<int>();
 
-            }
+            foreach (var number in input.Split('-'))
+                numbers.AddConvert
+            
+
+            
 
 
 
