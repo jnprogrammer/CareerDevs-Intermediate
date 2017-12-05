@@ -12,7 +12,7 @@ namespace Exercies
     {
         static void Main(string[] args)
         {
-            var numbers = new List<int> { 1, 2, 3, 4, 5, 6 };
+            var numbers = new List<int> { 1, 2 };
             var smallest = GetSmallests(numbers, 3);
 
             foreach (var num in numbers)
@@ -23,9 +23,14 @@ namespace Exercies
 
         public static List<int> GetSmallests(List<int> list, int count)
         {
-            if (count > list.Count)
+            if (list == null)
             {
-                throw new ArgumentOutOfRangeException("count", "Count cannot be greater than the number of elements in the list");
+                throw new ArgumentNullException("list");
+            }
+            //this is the make exections that are discriptive instead of mysterious. 
+            if (count > list.Count || count <= 0)
+            {
+                throw new ArgumentOutOfRangeException("count", "Count should be between 1 and the number of elements in the list");
             }
             var smallests = new List<int>();
 
