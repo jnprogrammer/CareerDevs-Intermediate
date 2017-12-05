@@ -4,15 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
- * 
- * 
- * 
- This program intended use is to explore the debugging features of Visual Studio  
- * 
- * 
- * 
- */
+
 
 namespace Exercies
 {
@@ -31,6 +23,10 @@ namespace Exercies
 
         public static List<int> GetSmallests(List<int> list, int count)
         {
+            if (count > list.Count)
+            {
+                throw new ArgumentOutOfRangeException("count", "Count cannot be greater than the number of elements in the list");
+            }
             var smallests = new List<int>();
 
             while (smallests.Count < count)
