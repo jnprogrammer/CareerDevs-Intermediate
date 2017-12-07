@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,12 @@ namespace Intermediate_Exercies
         public int Id;
         public string Name;
         public readonly List<Order> Orders = new List<Order>();
-               
+
         public Customer(int id)
         {
             this.Id = id;
         }
-        
+
         public Customer(int id, string name)
             : this(id)
         {
@@ -26,7 +26,7 @@ namespace Intermediate_Exercies
         public void Promote()
         {
             // code here
-             
+
         }
     }
 
