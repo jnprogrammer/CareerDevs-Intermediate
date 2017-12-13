@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Intermediate_Exercies
 {
-    
+
     public class Text : Shape
     {
         public int FontSize { get; set; }
