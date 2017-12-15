@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +30,7 @@ namespace Intermediate_Exercies
         {
             watchStopped = false;
 
-            while(watchStopped == false)
+            while (watchStopped == false)
             {
                 duration.Add();
             }
@@ -49,7 +49,7 @@ namespace Intermediate_Exercies
     {
         static void Main(string[] args)
         {
-           
+
         }
     }
 }
