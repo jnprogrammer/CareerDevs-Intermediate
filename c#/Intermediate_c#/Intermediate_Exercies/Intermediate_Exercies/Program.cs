@@ -27,22 +27,24 @@ namespace Intermediate_Exercies
         public TimeSpan duration = new TimeSpan();
         public TimeSpan second = new TimeSpan(0,0,1);
 
-        private bool watchStopped = true;
+    
         public void Start()
         {
-            watchStopped = false;
             do
             {
-                while(!Console.KeyAvailable)
+                while (!Console.KeyAvailable)
                 {
                     Console.WriteLine(duration = duration.Add(second));
                 }
-                
+
             } while (Console.ReadKey().Key != ConsoleKey.S);
+            Console.WriteLine("STOPPED @: " + duration);
+
         }
+
         public void Stop()
         {
-            watchStopped = true;
+            
         }
         public void ShowDuration()
         {
@@ -54,8 +56,30 @@ namespace Intermediate_Exercies
         static void Main(string[] args)
         {
             var stopWatch = new Stopwatch();
+            bool watchStopped = true;
+
             Console.WriteLine("Press s to start the stopWatch\n press s again");
-            stopWatch.Start();
+            if (Console.ReadKey().Key == ConsoleKey.S)
+            {
+                stopWatch.Start();
+            } 
         }
     }
 }
+
+
+
+/*
+ I like this function 
+  public void Start()
+    {      
+        do
+        {
+            while(!Console.KeyAvailable)
+            {
+                Console.WriteLine(duration = duration.Add(second));
+            }
+                
+        } while (Console.ReadKey().Key != ConsoleKey.S);
+    }
+ */
