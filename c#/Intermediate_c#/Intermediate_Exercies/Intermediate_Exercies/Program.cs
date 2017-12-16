@@ -21,6 +21,7 @@ We should not be able to start a stopwatch twice in a row
 So the class should throw an InvalidOperationException if its started twice.
 
  */
+
 namespace Intermediate_Exercies
 {
     public class Stopwatch
@@ -35,7 +36,7 @@ namespace Intermediate_Exercies
             while(watchStopped == false)
             {
                 clock = clock.Add(second);
-                Console.WriteLine(clock);
+                Console.WriteLine("\r" + clock);
                 while (Console.KeyAvailable)
                 {
                     if (Console.ReadKey().Key == ConsoleKey.S)
@@ -45,6 +46,7 @@ namespace Intermediate_Exercies
                 }
             }
         }
+
         public void Stop()
         {
             watchStopped = true;
@@ -56,18 +58,16 @@ namespace Intermediate_Exercies
         {
             var stopWatch = new Stopwatch();
 
-            
-
-
             while (!Console.KeyAvailable)
             {
                if(Console.ReadKey().Key == ConsoleKey.A)
                 {
                     stopWatch.Start();
                 }
-               
-
-
+               if(Console.ReadKey().Key == ConsoleKey.D)
+                {
+                    Console.WriteLine("Display time");
+                }
             }
 
             
