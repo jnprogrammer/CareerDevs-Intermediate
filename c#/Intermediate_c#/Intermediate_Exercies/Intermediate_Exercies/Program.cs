@@ -26,7 +26,7 @@ namespace Intermediate_Exercies
 {
     public class Stopwatch
     {
-        public TimeSpan clock = new TimeSpan();
+        public TimeSpan clock = new TimeSpan(0,0,0);
         public TimeSpan second = new TimeSpan(0,0,1);
         public bool watchStopped = true;
 
@@ -36,11 +36,13 @@ namespace Intermediate_Exercies
             while(watchStopped == false)
             {
                 clock = clock.Add(second);
-                Console.WriteLine("\r" + clock);
+
+               // Console.WriteLine("\r" + clock);
                 while (Console.KeyAvailable)
                 {
                     if (Console.ReadKey().Key == ConsoleKey.S)
                     {
+                        Console.WriteLine(" stoped");
                         watchStopped = true;
                     }
                 }
@@ -57,16 +59,17 @@ namespace Intermediate_Exercies
         static void Main(string[] args)
         {
             var stopWatch = new Stopwatch();
-
+            Console.WriteLine("Press a to start, s to stop and when stopped, press d to see time elasped");
             while (!Console.KeyAvailable)
             {
                if(Console.ReadKey().Key == ConsoleKey.A)
                 {
+                    Console.WriteLine(" started");
                     stopWatch.Start();
                 }
                if(Console.ReadKey().Key == ConsoleKey.D)
                 {
-                    Console.WriteLine("Display time");
+                    Console.WriteLine(" Time passed " + stopWatch.clock);
                 }
             }
 
