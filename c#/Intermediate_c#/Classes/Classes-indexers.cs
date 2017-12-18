@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +31,7 @@ namespace Intermediate_Exercies
             }
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
