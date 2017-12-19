@@ -9,36 +9,17 @@ using System.Threading.Tasks;
 
 namespace Intermediate_Exercies
 {
-    public class HttpCookie
+    public class DbMigrator
     {
-        private readonly Dictionary<string, string> _dictionary;
 
-        public DateTime Expiry { get; set; }
-        public HttpCookie()
-        {
-            _dictionary = new Dictionary<string, string>();
-        }
-
-        public string this[string key]
-        {
-            get
-            {
-                return _dictionary[key];
-            }
-            set
-            {
-                _dictionary[key] = value;
-            }
-        }
     }
-    
+   
     class Program
     {
         static void Main(string[] args)
         {
-            var cookie = new HttpCookie();
-            cookie["name"] = "James";
-            Console.WriteLine(cookie["name"]);
+          var orderProcessor = new OrderP
+
         }
     }
 }
