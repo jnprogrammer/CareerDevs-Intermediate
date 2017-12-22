@@ -75,53 +75,14 @@ namespace Intermediate_Exercies
             Console.WriteLine("Close Oracle connection");
         }
     }
-
-    public class DbCommand
-    {
-        private DbConnection theDbUrl;
-        public DbConnection db
-        {
-            get
-            {
-                return theDbUrl;
-            }
-            set
-            {
-                theDbUrl = value;
-            }
-        }
-        public void DbCommand(DbConnection db)
-       {
-            if(DbConnection == null)
-            {
-                Console.WriteLine("A db object must be provided");
-                return 1;
-            }               
-       }
-
-        public void checkDb(DbConnection db)
-        {
-            Console.WriteLine("Checking Db security for: " + db);
-        }
-       public void Execute()
-        {
-            db.openConnection(db);
-            checkDb(db);
-            db.closeConnection(db);
-        }
-    }
-     
     class Program
     {
         static void Main(string[] args)
         {
 
             var SQLdb = new SqlConnection();
-            var dbCommand = new DbCommand(SQLdb);
-
-            dbCommand.dbConnection("Valid DB URL");
-            dbCommand.Execute();
-            dbCommand.closeConnection();
+            SQLdb.dbConnection("Valid DB URL");
+            SQLdb.closeConnection();
 
             var Oracledb = new OracleConnection();
             Oracledb.dbConnection("");
