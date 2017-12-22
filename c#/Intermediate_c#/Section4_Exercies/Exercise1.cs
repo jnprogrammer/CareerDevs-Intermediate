@@ -19,11 +19,16 @@ namespace Intermediate_Exercies
             stackList.Add((object)obj);
         }
 
-        public object Pop()
+        public object Pop(int index)
         {
 
+            Console.WriteLine(stackList[0]);
             return stackList.Remove(stackList[0]);
+        }
 
+        public void clear()
+        {
+            stackList.Clear();
         }
 
     }
@@ -37,9 +42,9 @@ namespace Intermediate_Exercies
             stack.Push(2);
             stack.Push(3);
 
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            stack.Pop(3);
+            stack.Pop(2);
+            stack.Pop(1);
 
         }
     }

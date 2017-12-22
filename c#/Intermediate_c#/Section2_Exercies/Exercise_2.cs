@@ -27,21 +27,54 @@ namespace Intermediate_Exercies
     {
         public string title;
         public string description;
-        public DateTime date;
+        public DateTime dateCreated;
 
+        public Post()
+        {
+            Console.WriteLine("post object created");
+        }
         private int votes;
 
-        public int theVotes { get; set; }
+        public int theVotes
+        {
+            get
+            {
+                return votes;
+            }
+            set
+            {
+                votes = value;
+            }
+        }
+
+        public void DownVote()
+        {
+            votes--;
+            Console.WriteLine("Post DownVoted :(");
+            Console.WriteLine("UpVotes reamining: " + votes + "\n");
+        }
+
+        public void UpVote()
+        {
+            votes++;
+            Console.WriteLine("UpVotes remaining: " + votes + "\n");
+        }
 
     }
     class Program
     {
         static void Main(string[] args)
         {
+            int i = 0;
             var stackOverflowPost = new Post();
 
             stackOverflowPost.theVotes = 24;
 
+            do
+            {
+                i++;
+                stackOverflowPost.DownVote();
+            } while (i <= 10);
 
         }
     }
