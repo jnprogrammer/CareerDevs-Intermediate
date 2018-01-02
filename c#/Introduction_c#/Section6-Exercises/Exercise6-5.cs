@@ -25,7 +25,7 @@ namespace Exercies
                 Console.WriteLine("Enter a list of CSV up to five numbers:");
                 var input = Console.ReadLine();
 
-                if (!String.IsNullOrWhiteSpace(input))
+                if (String.IsNullOrWhiteSpace(input) != true)
                 {
                     elements = input.Split(',');
                     if (elements.Length >= 5)
